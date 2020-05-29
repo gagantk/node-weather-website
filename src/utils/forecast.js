@@ -9,13 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.cod === '400') {
             callback('Unable to find location', undefined)
         } else {
-            const sunrise = (new Date(body.sys.sunrise * 1000)).toLocaleTimeString()
-            const sunset = (new Date(body.sys.sunset * 1000)).toLocaleTimeString()
-            callback(undefined, {
-                forecast: body.weather[0].main + '. It is currently ' + body.main.temp + '° out. But it feels like ' + body.main.feels_like + '°.',
-                sunrise,
-                sunset
-            })
+            callback(undefined, body.weather[0].main + '. It is currently ' + body.main.temp + '° out. But it feels like ' + body.main.feels_like + '°.')
         }
     })
 }
