@@ -53,3 +53,7 @@ button {
     color: white;
     padding: 8px;
 }
+
+#message-3, #message-4 {
+    font-size: 14px;
+}
